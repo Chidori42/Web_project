@@ -1,0 +1,69 @@
+body , head{
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+body.black_back {
+    background-color: black;
+    color: white;
+}
+body.white_back {
+    background-color: white;
+    color: black;
+}
+
+.my-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    top:0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* width: 100px; */
+    transition: left 1s;
+}
+li{
+    border-right: none;
+}
+li a {
+    display: block;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-style: italic;
+    text-align: center;
+    padding: 14px;
+    margin: 10px;
+    width: 80px;
+    text-decoration: none;
+    color: black;
+    background: none;
+}
+li a:hover{
+    background-color: lightblue;
+    transform: rotateY(360deg);
+}
+body.black_back li a {
+    border: 1px solid white;
+    color: white;
+}
+#account{
+    margin-left: auto;
+    margin-right: 20px;
+}
+#white_back, #black_back{
+    border: 15px;
+    border-radius: 50%;
+    width: 80px;
+    font-family: italic;
+    background-color: antiquewhite;
+}
+body.black_back #click {
+    border: 15px solid white;
+    background-color: #333;
+    color: white;
+}
