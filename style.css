@@ -1,3 +1,26 @@
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#dark-mode-toggle img {
+    width: 50px; /* Adjust the size of the icon */
+    height: 30px; /* Adjust the size of the icon */
+}
+
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.dark-mode .theme-toggle {
+    color: #fff;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: rgb(211, 210, 223);
@@ -16,7 +39,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 25%;
+    height: 45%;
     z-index: -1;
     overflow: hidden;
 }
@@ -83,6 +106,9 @@ dev {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
 }
+.dark-mode .description {
+    color: black; /* Dark mode text color */
+}
 
 h1 {
     font-size: 36px;
@@ -92,43 +118,99 @@ h1 {
     margin-bottom: 30px;
 }
 
+.theme-toggle {
+    background-color: transparent;
+    border: none;
+    color: #333; /* Adjust the color as needed */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    color: #666; /* Adjust the hover color as needed */
+}
+
+.projects-container {
+    overflow-x: auto; /* Enable horizontal overflow scrolling */
+    white-space: nowrap; /* Prevent projects from wrapping to the next line */
+}
+
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 50px;
+    animation: slide 10s linear infinite alternate; /* Apply animation */
 }
 
 .project {
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    box-shadow: 0px 0px 30px rgba(138, 24, 24, 0.1);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Needed for absolute positioning of the description */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for transform and box-shadow */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center text alignment */
+}
+
+.project:hover {
+    transform: translateY(-10px); /* Slightly lift the card */
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
 .project img {
     width: 100%;
-    height: auto;
-    border-radius: 10px 10px 0 0;
+    height: 350px; /* Set a fixed height for images */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    border-radius: 25px 25px 0 0;
+}
+
+.project-title {
+    font-size: 24px;
+    color: #111010;
+    margin: 15px 0; /* Margin to separate from the image and description */
 }
 
 .project-info {
-    bottom: 0;
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure spacing between elements */
+    width: 100%;
+    background-color: rgba(240, 232, 235, 0.8);
+    padding: 25px;
     box-sizing: border-box;
+    flex-grow: 1; /* Ensures the info section takes up remaining space */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0; /* Initially hide the description */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    z-index: 1; /* Ensure it is above other elements */
 }
 
-.project-info h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
+.project:hover .project-info {
+    transform: translateY(0);
+    opacity: 1; /* Show the description on hover */
 }
 
 .project-info p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
     font-size: 16px;
-    color: #666;
+    color: #382e2e;
     margin-bottom: 20px;
+    line-height: 1.5; /* Improved line spacing for readability */
+    text-align: justify; /* Ensures the text is aligned nicely */
+}
+
+.project-info .btn-container {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    margin-top: auto; /* Push the button to the bottom */
 }
 
 .btn {
@@ -138,10 +220,13 @@ h1 {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for background, transform, and box-shadow */
 }
 
 .btn:hover {
     background-color: #2980b9;
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
 }
 
 #contact {

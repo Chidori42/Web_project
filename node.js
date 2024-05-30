@@ -1,13 +1,23 @@
 
-// document.getElementById('white_back').addEventListener('click', function() {
-//     document.body.classList.remove('black_back');
-//     document.body.classList.add('white_back');
-// });
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
 
-// document.getElementById('black_back').addEventListener('click', function() {
-//     document.body.classList.remove('white_back');
-//     document.body.classList.add('black_back');
-// });
+// Event listener for dark mode toggle button/icon
+document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
+
+const projectsContainer = document.querySelector('.projects');
+
+function moveProjects(event) {
+    const containerWidth = projectsContainer.offsetWidth;
+    const mouseX = event.clientX - projectsContainer.getBoundingClientRect().left;
+    const percentX = mouseX / containerWidth;
+    const translateX = (containerWidth - mouseX) * 0.2; // Adjust the multiplier for the desired effect
+    projectsContainer.style.transform = `translateX(${translateX}px)`;
+}
+
+projectsContainer.addEventListener('mousemove', moveProjects);
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
