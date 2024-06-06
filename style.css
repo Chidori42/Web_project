@@ -1,3 +1,15 @@
+
+.container {
+    overflow-y: scroll; /* Ensures the container is scrollable */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.container::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, and Opera */
+}
+
+
 #dark-mode-toggle {
     position: fixed;
     top: 20px; /* Adjust as needed */
@@ -23,10 +35,17 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(211, 210, 223);
+    background-image: url('white_back.jpg');
+    background-size: cover;  /* Ensures the image covers the entire viewport */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body.dark-mode {
+    background-image: url('black_back.jpg');
 }
 
 header {
@@ -62,35 +81,56 @@ header {
     height: 200px;
     margin-right: 1rem;
 }
+
+#head-photo:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2); 
+}
 #Name{
     font-size: large;
     color: white;
     font-family: initial;
 }
 nav ul {
-    list-style: none;
-    padding: 0;
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
+nav ul .Linkdin:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+}
+nav ul .Github:hover {
+    transform: scale(1.05);
+    background-color: black;
+}
+nav ul li:hover {
+    transform: scale(1.05);
+    background-color: #26262b;
+}
 nav ul li {
-    border: 2px solid whitesmoke;
-    border-radius: 45%;
-    border-width: 2px;
-    background: none;
+    border: 2px solid whitesmoke; 
+    border-radius: 30px; 
     display: inline;
-    padding: 15px;
-    margin: 0 6rem;
-}
-nav ul li:hover{
-    color: white;
-    text-shadow: 0 0 5px white;
+    padding: 10px 20px; 
+    margin: 0 1rem; 
+    transition: all 0.3s ease;
 }
 
-nav ul li a {
-    color: rgb(215, 213, 213);
-    font-size: large;
-    font-family:fantasy;
+
+nav ul li a{
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
     text-decoration: none;
+    padding: 5px 10px; 
+    display: inline-block; 
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 main {
@@ -106,8 +146,19 @@ dev {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
 }
+.description:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
 .dark-mode .description {
-    color: black; /* Dark mode text color */
+    color: black; 
+}
+
+.dark-mode .description  h1{
+    color: black; 
+}
+.dark-mode h1 {
+    color: white; 
 }
 
 h1 {
@@ -121,22 +172,86 @@ h1 {
 .theme-toggle {
     background-color: transparent;
     border: none;
-    color: #333; /* Adjust the color as needed */
+    color: #333; 
     font-size: 24px;
     cursor: pointer;
 }
 
 .theme-toggle:hover {
-    color: #666; /* Adjust the hover color as needed */
+    color: #666; 
+}
+
+.professional-career {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.professional-career:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.professional-career h1 {
+    font-size: 36px;
+    font-family: fantasy;
+    color: #52a7db;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.career-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.career-list li {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+}
+
+.career-list li:last-child {
+    border-bottom: none;
+}
+
+.career-list h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+}
+
+.career-list p {
+    font-size: 16px;
+    color: #7f8c8d;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+
+.career-duration {
+    font-size: 14px;
+    color: #95a5a6;
+    font-style: italic;
 }
 
 .projects-container {
-    overflow-x: auto; /* Enable horizontal overflow scrolling */
-    white-space: nowrap; /* Prevent projects from wrapping to the next line */
+    overflow-x: auto;
+    white-space: nowrap; 
+}
+
+.projects-wrapper {
+    overflow: hidden; 
+    width: 100%;
+    position: relative; 
 }
 
 .projects {
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 50px;
     animation: slide 10s linear infinite alternate; /* Apply animation */
@@ -145,56 +260,57 @@ h1 {
 .project {
     background-color: #fff;
     border-radius: 40px;
+    min-width: 100px;
+    box-sizing: border-box;
     box-shadow: 0px 0px 30px rgba(138, 24, 24, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    position: relative; /* Needed for absolute positioning of the description */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for transform and box-shadow */
-    align-items: center; /* Center align items */
-    text-align: center; /* Center text alignment */
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .project:hover {
     transform: translateY(-10px); /* Slightly lift the card */
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2); 
 }
 
 .project img {
     width: 100%;
-    height: 350px; /* Set a fixed height for images */
-    object-fit: cover; /* Ensures the image covers the container without distortion */
+    height: 350px; 
+    object-fit: cover; 
     border-radius: 25px 25px 0 0;
 }
 
 .project-title {
     font-size: 24px;
     color: #111010;
-    margin: 15px 0; /* Margin to separate from the image and description */
+    margin: 15px 0;
 }
 
 .project-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensure spacing between elements */
+    justify-content: space-between;
     width: 100%;
     background-color: rgba(240, 232, 235, 0.8);
     padding: 25px;
     box-sizing: border-box;
-    flex-grow: 1; /* Ensures the info section takes up remaining space */
+    flex-grow: 1; 
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0; /* Initially hide the description */
-    transition: opacity 0.3s ease; /* Smooth transition for opacity */
-    z-index: 1; /* Ensure it is above other elements */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1; 
 }
 
 .project:hover .project-info {
     transform: translateY(0);
-    opacity: 1; /* Show the description on hover */
+    opacity: 1;
 }
 
 .project-info p {
@@ -203,14 +319,14 @@ h1 {
     font-size: 16px;
     color: #382e2e;
     margin-bottom: 20px;
-    line-height: 1.5; /* Improved line spacing for readability */
-    text-align: justify; /* Ensures the text is aligned nicely */
+    line-height: 1.5;
+    text-align: justify; 
 }
 
 .project-info .btn-container {
     display: flex;
     justify-content: flex-end; /* Align button to the right */
-    margin-top: auto; /* Push the button to the bottom */
+    margin-top: auto;
 }
 
 .btn {
@@ -225,20 +341,14 @@ h1 {
 
 .btn:hover {
     background-color: #2980b9;
+    border: #111010;
     transform: scale(1.05); /* Slightly enlarge the button */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
 }
 
-#contact {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#contact-form label {
-    display: block;
+ #contact-form label {
+    display: grid;
+    padding: 3px;
     margin-bottom: 10px;
     color: #666;
 }
@@ -246,23 +356,19 @@ h1 {
 #contact-form input[type="text"],
 #contact-form input[type="email"],
 #contact-form textarea {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #433232;
     border-radius: 5px;
 }
 
-#contact-form textarea {
-    resize: none;
-}
-
 #contact-form button {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     background-color: #007bff;
     color: #fff;
-    border: none;
+    border: none; 
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;

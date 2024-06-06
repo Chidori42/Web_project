@@ -6,8 +6,14 @@ function toggleDarkMode() {
 // Event listener for dark mode toggle button/icon
 document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
 
-const projectsContainer = document.querySelector('.projects');
 
+
+
+
+const projectsContainer = document.querySelector('.projects');
+const projects = document.querySelectorAll('.project');
+
+// Function to move projects based on mouse movement
 function moveProjects(event) {
     const containerWidth = projectsContainer.offsetWidth;
     const mouseX = event.clientX - projectsContainer.getBoundingClientRect().left;
@@ -16,7 +22,22 @@ function moveProjects(event) {
     projectsContainer.style.transform = `translateX(${translateX}px)`;
 }
 
+// Event listener for mouse movement
 projectsContainer.addEventListener('mousemove', moveProjects);
+
+// Function to limit visible projects to three
+function limitVisibleProjects() {
+    const projectWidth = projectsContainer.querySelector('.project').offsetWidth;
+    const visibleProjects = Math.min(projects.length, 3);
+    projectsContainer.style.width = `${visibleProjects * projectWidth}px`;
+}
+
+// Initial call to limit the visible projects
+limitVisibleProjects();
+
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

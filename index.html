@@ -10,23 +10,30 @@
 
 <body>
     <header>
+
+
         <div class="video-back">
             <video autoplay muted loop id="header-video">
                 <source src="M_back.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
+
+
+
         <div class="header-photo">
             <img src="img1.jpg" alt="my photo" id="head-photo">
         </div>
         <h1 id="Name">Abdellatif El Fagrouch</h1>
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="https://github.com/chidoalx?tab=repositories">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#career">Career</a></li>
+                <li class="Github"><a href="https://github.com/chidoalx?tab=repositories">Github</a></li>
+                <li class="Linkdin"><a href="https://www.linkedin.com/in/abdellatif-el-fagrouch/">Linkdin</a></li>
             </ul>
         </nav>
+
+
     </header>
 
     <main>
@@ -50,6 +57,23 @@
             <p class="future">As I continue on my journey as a web developer, I am excited to apply my knowledge and skills to
                 create innovative solutions that make a meaningful impact in the ever-evolving world of technology.</p>
         </div>
+
+
+        <section class="professional-career" id="career">
+            <h1>Professional Career</h1>
+            <ul class="career-list">
+                <li>
+                    <h2>Software Engineer at XYZ Company</h2>
+                    <p>Developed and maintained web applications using modern frameworks and technologies. Collaborated with cross-functional teams to deliver high-quality software solutions.</p>
+                    <span class="career-duration">Jan 2022 - Present</span>
+                </li>
+                <li>
+                    <h2>Junior Developer at ABC Corporation</h2>
+                    <p>Assisted in the development of front-end interfaces and back-end systems. Participated in code reviews and contributed to team projects.</p>
+                    <span class="career-duration">Jun 2020 - Dec 2021</span>
+                </li>
+            </ul>
+        </section>
 
         <h1 class="projects-container">My Projects</h1>
         <div class="projects">
@@ -87,8 +111,9 @@
                     </div>
                 </div>
             </div>
-            <!-- Add more projects as needed -->
         </div>
+
+
 
         <dev id="contact">
             <h1>Contact</h1>
@@ -105,9 +130,13 @@
                 <button type="submit">Send</button>
             </form>
         </dev>
+
+
         <button id="dark-mode-toggle">
             <img src="dark_mode.png" alt="Dark Mode Toggle" id="dark-icon">
         </button>
+
+
     </main>
     <script src="node.js"></script>
 </body>
