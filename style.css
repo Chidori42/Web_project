@@ -16,9 +16,7 @@
 #dark-mode-toggle {
     position: fixed;
     top: 20px;
-    /* Adjust as needed */
     right: 20px;
-    /* Adjust as needed */
     background: transparent;
     border: none;
     cursor: pointer;
@@ -26,9 +24,7 @@
 
 #dark-mode-toggle img {
     width: 50px;
-    /* Adjust the size of the icon */
     height: 30px;
-    /* Adjust the size of the icon */
 }
 
 .dark-mode {
@@ -41,14 +37,16 @@
 }
 
 body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    /* Hide overflow on the left and right */
+    overflow-y: auto;
     font-family: Arial, sans-serif;
     background-image: url('white_back.jpg');
     background-size: cover;
-    /* Ensures the image covers the entire viewport */
     background-position: center;
-    /* Centers the image */
     background-repeat: no-repeat;
-    /* Prevents the image from repeating */
     background-attachment: fixed;
     margin: 0;
     padding: 0;
@@ -116,39 +114,46 @@ nav ul {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-nav ul .Linkdin:hover {
-    transform: scale(1.05);
-    background-color: #0056b3;
+nav ul li {
+    border-radius: 50%;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin: 0 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-nav ul .Github:hover {
-    transform: scale(1.05);
-    background-color: black;
+nav ul li a {
+    display: block;
+    width: 60%;
+    height: 60%;
+    text-indent: -9999px;
 }
 
 nav ul li:hover {
     transform: scale(1.05);
-    background-color: #26262b;
 }
 
-nav ul li {
-    border: 2px solid whitesmoke;
-    border-radius: 30px;
-    display: inline;
-    padding: 10px 20px;
-    margin: 0 1rem;
-    transition: all 0.3s ease;
+nav ul .Linkdin {
+    background-image: url('linkedin-item.png');
+    background-size: cover;
+    background-position: center;
 }
 
+nav ul .Github {
+    background-color: white;
+    background-image: url('github-item.png');
+    background-size: cover;
+    background-position: center;
+}
 
-nav ul li a {
-    color: white;
-    font-family: sans-serif;
-    font-size: 20px;
-    text-decoration: none;
-    padding: 5px 10px;
-    display: inline-block;
-    transition: color 0.3s ease, background-color 0.3s ease;
+nav ul .Twitter {
+    background-color: white;
+    background-image: url('twitterx-item.png');
+    background-size: cover;
+    background-position: center;
 }
 
 main {
