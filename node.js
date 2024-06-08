@@ -3,7 +3,6 @@ function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
 }
 
-// Event listener for dark mode toggle button/icon
 document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
 
 
@@ -27,15 +26,27 @@ projectsContainer.addEventListener('mousemove', moveProjects);
 
 // Function to limit visible projects to three
 function limitVisibleProjects() {
-    const projectWidth = projectsContainer.querySelector('.project').offsetWidth;
-    const visibleProjects = Math.min(projects.length, 3);
-    projectsContainer.style.width = `${visibleProjects * projectWidth}px`;
+    projectsContainer.style.width = '100%';
 }
 
 // Initial call to limit the visible projects
 limitVisibleProjects();
 
 
+//toggle button
+// const content = document.getElementById('content');
+//         const toggleBtn = document.getElementById('toggleBtn');
+
+//         toggleBtn.addEventListener('click', () => {
+//             if (content.classList.contains('hidden')) {
+//                 content.classList.remove('hidden');
+//                 content.classList.add('visible');
+//             } else {
+//                 content.classList.remove('visible');
+//                 content.classList.add('hidden');
+//             }
+//         });
+    
 
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');

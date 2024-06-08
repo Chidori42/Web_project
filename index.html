@@ -10,11 +10,9 @@
 
 <body>
     <header>
-
-
         <div class="video-back">
             <video autoplay muted loop id="header-video">
-                <source src="M_back.mp4" type="video/mp4">
+                <source src="vedios/mv_back.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -22,7 +20,7 @@
 
 
         <div class="header-photo">
-            <img src="img1.jpg" alt="my photo" id="head-photo">
+            <img src="texters/img1.jpg" alt="my photo" id="head-photo">
         </div>
         <h1 id="Name">Abdellatif El Fagrouch</h1>
         <nav>
@@ -32,12 +30,10 @@
                 <li class="Linkdin"><a href="https://www.linkedin.com/in/abdellatif-el-fagrouch/">Linkdin</a></li>
             </ul>
         </nav>
-
-
     </header>
 
     <main>
-        <div class="description">
+        <div class="description"  class="back_class">
             <h1>About Me</h1>
             <p class="intro">As a passionate web developer, I have honed my skills through rigorous training at 1337 Coding
                 School in Morocco. Armed with a bachelor's degree, I embarked on a journey to delve deep into the world of web
@@ -58,83 +54,94 @@
                 create innovative solutions that make a meaningful impact in the ever-evolving world of technology.</p>
         </div>
 
-
-        <section class="professional-career" id="career">
-            <h1>Professional Career</h1>
-            <ul class="career-list">
-                <li>
-                    <h2>Software Engineer at XYZ Company</h2>
-                    <p>Developed and maintained web applications using modern frameworks and technologies. Collaborated with cross-functional teams to deliver high-quality software solutions.</p>
-                    <span class="career-duration">Jan 2022 - Present</span>
-                </li>
-                <li>
-                    <h2>Junior Developer at ABC Corporation</h2>
-                    <p>Assisted in the development of front-end interfaces and back-end systems. Participated in code reviews and contributed to team projects.</p>
-                    <span class="career-duration">Jun 2020 - Dec 2021</span>
-                </li>
-            </ul>
-        </section>
-
-        <h1 class="projects-container">My Projects</h1>
-        <div class="projects">
-            <div class="project">
-                <img src="Minishell.jpg" alt="Project 1">
-                <h2 class="project-title">Minishell</h2>
-                <div class="project-info">
-                    <h2>Minishell</h2>
-                    <p>The Minishell project at 42 School is a fundamental exercise in understanding and implementing a basic Unix shell.</p>
-                    <div class="btn-container">
-                        <a href="https://github.com/chidoalx/Minishell" class="btn">View Project</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project">
-                <img src="push_swap.jpg" alt="Project 2">
-                <h2 class="project-title">Push_Swap</h2>
-                <div class="project-info">
-                    <h2>Push_Swap</h2>
-                    <p>The Push Swap project challenges students to devise an efficient algorithm for sorting a stack of integers using a limited set of operations. With an emphasis on algorithmic optimization and problem-solving skills.</p>
-                    <div class="btn-container">
-                        <a href="https://github.com/chidoalx/Minishell" class="btn">View Project</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project">
-                <img src="solong.jpg" alt="Project 3">
-                <h2 class="project-title">So_Long</h2>
-                <div class="project-info">
-                    <h2>So_Long</h2>
-                    <p>The So_Long project at 42 School is a graphics-related project that focuses on creating a simple 2D game using the
-                    MiniLibX, a graphics library provided by the school.</p>
-                    <div class="btn-container">
-                        <a href="https://github.com/chidoalx/So_Long" class="btn">View Project</a>
-                    </div>
-                </div>
-            </div>
+        
+        <div id="content" class="hidden">
+            <section class="professional-career" class="back_class" id="career">
+                <h1>Professional Career</h1>
+                <ul class="career-list">
+                    <li>
+                        <h2>Software Engineer at XYZ Company</h2>
+                        <p>Developed and maintained web applications using modern frameworks and technologies. Collaborated with cross-functional teams to deliver high-quality software solutions.</p>
+                        <span class="career-duration">Jan 2022 - Present</span>
+                    </li>
+                    <li>
+                        <h2>Junior Developer at ABC Corporation</h2>
+                        <p>Assisted in the development of front-end interfaces and back-end systems. Participated in code reviews and contributed to team projects.</p>
+                        <span class="career-duration">Jun 2020 - Dec 2021</span>
+                    </li>
+                    <li>
+                        <h2>Junior Developer at ABC Corporation</h2>
+                        <p>Assisted in the development of front-end interfaces and back-end systems. Participated in code reviews and contributed to team projects.</p>
+                        <span class="career-duration">Jun 2020 - Dec 2021</span>
+                    </li>
+                </ul>
+            </section>
+            <img src="texters/Career.png" alt="Dark Mode Toggle" id="dark-icon">
         </div>
+ 
 
+        <div class="projects-container">
+            <h1>My Projects</h1>
+            <div class="projects">
+                <div class="project">
+                    <img src="texters/Minishell.jpg" alt="Project 1">
+                    <h2 class="project-title">Minishell</h2>
+                    <div class="project-info">
+                        <h2>Minishell</h2>
+                        <p>The Minishell project at 42 School is a fundamental exercise in understanding and implementing a basic Unix shell.</p>
+                        <div class="btn-container">
+                            <a href="https://github.com/chidoalx/Minishell" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="texters/push_swap.jpg" alt="Project 2">
+                    <h2 class="project-title">Push_Swap</h2>
+                    <div class="project-info">
+                        <h2>Push_Swap</h2>
+                        <p>The Push Swap project challenges students to devise an efficient algorithm for sorting a stack of integers using a limited set of operations. With an emphasis on algorithmic optimization and problem-solving skills.</p>
+                        <div class="btn-container">
+                            <a href="https://github.com/chidoalx/Minishell" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="texters/solong.jpg" alt="Project 3">
+                    <h2 class="project-title">So_Long</h2>
+                    <div class="project-info">
+                        <h2>So_Long</h2>
+                        <p>The So_Long project at 42 School is a graphics-related project that focuses on creating a simple 2D game using the
+                            MiniLibX, a graphics library provided by the school.</p>
+                            <div class="btn-container">
+                                <a href="https://github.com/chidoalx/So_Long" class="btn">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+                
+                
+            <div id="contact" class="back_class">
+                <h1>Contact</h1>
+                <img src="texters/contact.png" id="img" alt="Contact Image">
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
 
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
 
-        <div id="contact">
-            <h1>Contact</h1>
-            <img src="contact.png" id="img" alt="Contact Image">
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Send</button>
-            </form>
-        </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
 
 
         <button id="dark-mode-toggle">
-            <img src="dark_mode.png" alt="Dark Mode Toggle" id="dark-icon">
+            <img src="texters/dark_mode.png" alt="Dark Mode Toggle" id="dark-icon">
         </button>
 
 

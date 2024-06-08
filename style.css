@@ -12,28 +12,28 @@
     /* Chrome, Safari, and Opera */
 }
 
-
 #dark-mode-toggle {
+    border-radius: 50%;
     position: fixed;
     top: 20px;
     right: 20px;
-    background: transparent;
-    border: none;
     cursor: pointer;
+    overflow: hidden;
 }
 
 #dark-mode-toggle img {
-    width: 50px;
+    width: 30px;
     height: 30px;
 }
 
-.dark-mode {
+
+.dark_back .back_class{
     background-color: #1a1a1a;
     color: #fff;
 }
 
-.dark-mode .theme-toggle {
-    color: #fff;
+body.dark-mode {
+    background-image: url('texters/dark_mode.png');
 }
 
 body {
@@ -43,7 +43,7 @@ body {
     /* Hide overflow on the left and right */
     overflow-y: auto;
     font-family: Arial, sans-serif;
-    background-image: url('white_back.jpg');
+    background-image: url('texters/white_back.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -51,10 +51,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body.dark-mode {
-    background-image: url('black_back.jpg');
 }
 
 header {
@@ -67,7 +63,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 102%;
     height: 45%;
     z-index: -1;
     overflow: hidden;
@@ -137,21 +133,21 @@ nav ul li:hover {
 }
 
 nav ul .Linkdin {
-    background-image: url('linkedin-item.png');
+    background-image: url('texters/linkedin-item.png');
     background-size: cover;
     background-position: center;
 }
 
 nav ul .Github {
     background-color: white;
-    background-image: url('github-item.png');
+    background-image: url('texters/github-item.png');
     background-size: cover;
     background-position: center;
 }
 
 nav ul .Twitter {
     background-color: white;
-    background-image: url('twitterx-item.png');
+    background-image: url('texters/twitterx-item.png');
     background-size: cover;
     background-position: center;
 }
@@ -169,6 +165,7 @@ dev {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
+    transition: 0.6s all;
 }
 
 .description h1 {
@@ -184,51 +181,54 @@ dev {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-.dark-mode .description {
+/* .dark-mode .description {
     color: black;
-}
+} */
 
 h1 {
     font-size: 36px;
     text-align: center;
     font-weight: bold;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
-.theme-toggle {
-    background-color: transparent;
-    border: none;
-    color: #333;
-    font-size: 24px;
-    cursor: pointer;
+#content{
+    display: flex;
+    align-items: center;
 }
 
-.theme-toggle:hover {
-    color: #666;
+#content img {
+    width: 500px;
+    height: 500px;
+    margin: 60px auto;
+    max-width: 50%;
+    /* margin-right: 20px; */
 }
 
-.professional-career {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
+#career {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50%;
+    margin: 60px 10px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.6s all;
 }
 
-.professional-career:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.professional-career h1 {
+#career h1 {
+    width: 100%;
     font-size: 36px;
     font-family: fantasy;
     color: #52a7db;
     text-align: center;
     margin-bottom: 20px;
+}
+
+#career:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .career-list {
@@ -254,9 +254,17 @@ h1 {
 
 .career-list p {
     font-size: 16px;
-    color: #7f8c8d;
+    color: #333;
     line-height: 1.5;
     margin: 0 0 10px 0;
+}
+
+.dark-mode .career-list h2{
+    color: #fff;
+}
+
+.dark-mode .career-list p{
+    color: #e0e0e0;
 }
 
 .career-duration {
@@ -265,7 +273,7 @@ h1 {
     font-style: italic;
 }
 
-.projects-container {
+.projects-container h1 {
     font-size: 36px;
     font-family: fantasy;
     color: #52a7db;
@@ -287,16 +295,15 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 50px;
     animation: slide 10s linear infinite alternate;
-    /* Apply animation */
 }
 
 .project {
     background-color: #fff;
     border-radius: 40px;
-    min-width: 100px;
     box-sizing: border-box;
     box-shadow: 0px 0px 30px rgba(138, 24, 24, 0.1);
     overflow: hidden;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -366,7 +373,7 @@ h1 {
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 10px;
     background-color: #3498db;
     color: #fff;
     text-decoration: none;
@@ -392,7 +399,7 @@ h1 {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.6s all;
 }
 
 #contact img {
