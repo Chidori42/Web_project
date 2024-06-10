@@ -14,13 +14,17 @@
 
 #dark-mode-toggle {
     border-radius: 50%;
+    width: 50px;
+    height: 35px;
     position: fixed;
     top: 20px;
     right: 20px;
     cursor: pointer;
     overflow: hidden;
 }
-
+#dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
 #dark-mode-toggle img {
     width: 30px;
     height: 30px;
@@ -180,6 +184,14 @@ dev {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
+.dark-mode .description{
+    background-color: #333;
+    box-shadow: 0px 0px 10px rgba(236, 235, 235, 0.975);
+}
+
+.dark-mode .description p {
+    color: #fff;
+}
 
 /* .dark-mode .description {
     color: black;
@@ -199,6 +211,7 @@ h1 {
 }
 
 #content img {
+    aspect-ratio: 1 / 1;
     width: 500px;
     height: 500px;
     margin: 60px auto;
@@ -460,4 +473,12 @@ h1 {
 
 #contact-form button:hover {
     background-color: #0056b3;
+}
+.dark-mode #contact {
+    background-color: #333;
+    box-shadow: 0px 0px 10px rgba(236, 235, 235, 0.975);
+}
+
+.dark-mode #contact-form label {
+    color: #fff;
 }
