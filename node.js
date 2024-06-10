@@ -56,30 +56,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
 
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('email', email);
-        formData.append('message', message);
-
-        //Send form data to server
-        fetch('send_email.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(data => {
-            alert(data); // Display server response
-            contactForm.reset(); // Reset form after successful submission
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // Optionally, display an error message to the user
-        });
+        Email.send({
+            // Get this from your SMTPJS account
+            Host : "smtp.elasticemail.com",
+            Username : "rcabdw@gmail.com",
+            Password : "CC918E904DECED8972D276B045C35F20D44F",
+            To: 'rcabdw@gmail.com',
+            From: email,
+            Subject: "New message from contact form",
+            Body: `Name: ${name}<br>Email: ${email}<br>Message: ${message}`
+        }).then(
+            message => alert(message)
+        );
     });
 });
 

@@ -14,7 +14,7 @@
 
 #dark-mode-toggle {
     border-radius: 50%;
-    width: 50px;
+    width: 45px;
     height: 35px;
     position: fixed;
     top: 20px;
@@ -44,7 +44,6 @@ body {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    /* Hide overflow on the left and right */
     overflow-y: auto;
     font-family: Arial, sans-serif;
     background-image: url('texters/white_back.jpg');
@@ -132,9 +131,23 @@ nav ul li a {
     z-index: 1;
 }
 
-nav ul li a .icon {
+nav ul li a .fa-twitter {
+    position: relative;
+    color: #55acee;
+    transition: .5s;
+    z-index: 3;
+}
+
+nav ul li a .fa-github {
     position: relative;
     color: #262626;
+    transition: .5s;
+    z-index: 3;
+}
+
+nav ul li a .fa-linkedin {
+    position: relative;
+    color: #55acee;
     transition: .5s;
     z-index: 3;
 }
