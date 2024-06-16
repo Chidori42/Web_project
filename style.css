@@ -229,7 +229,6 @@ dev {
 
 h1 {
     font-size: 36px;
-    /* text-align: center; */
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
@@ -267,7 +266,7 @@ h1 {
 }
 
 .timeline li {
-    padding: 3em 0;
+    padding: 1em 0;
 }
 
 .timeline li:after {
@@ -491,6 +490,10 @@ h1 {
 
         z-index: 15;
     }
+    .dark-mode .desc{
+        background: #333;
+        color: #fff;
+    }
 
     .direction-l .desc,
     .direction-r .desc {
@@ -508,8 +511,7 @@ h1 {
 }
 
 .dark-mode .desc {
-    background-color: #fff;
-    color: black;
+    color: #fff;
 }
 
 .dark-mode .timeline:before {
@@ -592,12 +594,15 @@ h1 {
     right: 0;
     bottom: 0;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    border-radius: 20px;
+    transform: translateY(100%);
+    transition: 0.6s all;
     z-index: 1;
 }
 
 .project:hover .project-info {
     opacity: 1;
+    transform: translateY(0);
 }
 
 .project-info p {
