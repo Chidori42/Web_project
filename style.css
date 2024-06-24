@@ -66,7 +66,7 @@ header {
     top: 0;
     left: 0;
     width: 103%;
-    height: 45%;
+    height: 50%;
     overflow: hidden;
     z-index: -1;
 }
@@ -352,7 +352,6 @@ h1 {
     padding: 0;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
 }
 
@@ -367,6 +366,9 @@ h1 {
     font-size: 1.2rem;
 }
 
+.skills-list li img:hover{
+    transform: scale(1.05);
+}
 
 .timeline {
     display: block;
@@ -648,7 +650,7 @@ h1 {
 }
 
 .dark-mode .timeline:before {
-    background: linear-gradient(to bottom, rgba(217, 207, 154, 0.966) 0%, rgb(199, 209, 20) 8%, rgb(199, 209, 20) 92%, rgba(217, 207, 154, 0.966) 100%);
+    background: linear-gradient(to bottom, rgba(65, 65, 64, 0.966) 0%, rgb(240, 241, 236) 50%, rgba(68, 67, 65, 0.966) 100%);
 }
 
 
