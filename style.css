@@ -42,7 +42,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     font-family: Arial, sans-serif;
-    background-image: url('texters/white_back.jpg');
+    background: url('texters/white_back.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -65,7 +65,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 103%;
+    width: 100%;
     height: 50%;
     overflow: hidden;
     z-index: -1;
@@ -319,6 +319,22 @@ h1 {
     line-height: 1.5;
     text-align: center;
 }
+.learned-skills {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.learned-skills img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.learned-skills img:hover {
+    transform: scale(1.1);
+}
 
 .project-info .btn-container {
     display: flex;
@@ -345,30 +361,56 @@ h1 {
 .section {
     display: block;
     position: relative;
+    text-align: center;
 }
 
 .skills-list {
+    border-radius: 15px solid white;
     list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20;
 }
 
-.skills-list li img{
+.skill-item {
+    display: grid;
+    grid-template-columns: 1fr 0.25fr;
+    gap: 1px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.desc-skills {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: 0.6s all;
+}
+.dark-mode .desc-skills{
+    color: #fff;
+    background-color: #333;
+    box-shadow: 0px 0px 10px rgba(236, 235, 235, 0.975);
+}
+
+
+.desc-skills :hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+.skills-list li img {
     width: 60px; 
     height: 60px;
-    line-height: 80px;
-    text-align: center;
-    margin: 0 10px;
-    background: none;
-    color: #fff;
-    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
 }
 
-.skills-list li img:hover{
-    transform: scale(1.05);
+.skills-list li img:hover {
+    transform: scale(1.1);
 }
+
+
 
 .timeline {
     display: block;
@@ -650,7 +692,7 @@ h1 {
 }
 
 .dark-mode .timeline:before {
-    background: linear-gradient(to bottom, rgba(65, 65, 64, 0.966) 0%, rgb(240, 241, 236) 50%, rgba(68, 67, 65, 0.966) 100%);
+    background: linear-gradient(to bottom, rgba(217, 207, 154, 0.966) 0%, rgb(199, 209, 20) 8%, rgb(199, 209, 20) 92%, rgba(217, 207, 154, 0.966) 100%);
 }
 
 
