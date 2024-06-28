@@ -358,57 +358,75 @@ h1 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.section {
-    display: block;
-    position: relative;
+.skills-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     text-align: center;
+    background: none;
+}
+
+.skill-content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: none;
+}
+
+.skills-photo {
+    width: 300px;
+    height: 500px;
+    margin-right: 20px;
 }
 
 .skills-list {
-    border-radius: 15px solid white;
     list-style-type: none;
-    padding: 20;
+    padding: 0;
+    flex: 1; /* Take remaining space */
 }
 
 .skill-item {
-    display: grid;
-    grid-template-columns: 1fr 0.25fr;
-    gap: 1px;
-    justify-content: space-between;
+    display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(53, 50, 50, 0.975);
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.2s;
 }
 
-.desc-skills {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    transition: 0.6s all;
-}
-.dark-mode .desc-skills{
-    color: #fff;
+.dark-mode .skill-item {
     background-color: #333;
     box-shadow: 0px 0px 10px rgba(236, 235, 235, 0.975);
 }
 
-
-.desc-skills :hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+.skill-item:hover {
+    transform: scale(1.05);
 }
 
-
-.skills-list li img {
-    width: 60px; 
-    height: 60px;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
+.skill-item img {
+    width: 60px;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
 }
 
-.skills-list li img:hover {
-    transform: scale(1.1);
+.desc-skills {
+    font-size: 18px;
+    color: #333;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
+
+.dark-mode .desc-skills {
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
 
 
 
