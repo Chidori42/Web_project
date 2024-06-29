@@ -90,21 +90,14 @@ header {
 }
 
 #head-photo {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin-right: 1rem;
-}
-
-#head-photo:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
 }
 
 #Name {
-    font-size: large;
-    color: white;
-    font-family: initial;
+    font-family: Finger Paint;
+    font-size: 20px;
 }
 
 nav ul {
@@ -237,17 +230,30 @@ h1 {
 
 .projects {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    margin: 20px;
     padding: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background: none;
+    position: relative;
+}
+
+.projects-content {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+.projects-content::-webkit-scrollbar {
+    display: none;
 }
 
 .project {
     position: relative;
     width: 300px;
     height: 400px;
+    min-width: 300px;
+    max-width: 450px;
     margin: 20px;
     background: none;
     border-radius: 30px;
@@ -255,6 +261,37 @@ h1 {
     transition: 0.6s all;
     overflow: hidden;
 }
+button {
+    background: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+button img {
+    width: 30px;
+    height: 30px;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ccc;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1; 
+}
+
+#scrollLeft {
+    left: 0;
+}
+
+#scrollRight {
+    right: 0;
+}
+
 .dark-mode .project {
     border-radius: 30px;
     box-shadow: 0 4px 15px rgba(252, 252, 252, 0.81);
@@ -359,7 +396,7 @@ h1 {
 }
 
 .skills-section {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 40px;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -370,14 +407,15 @@ h1 {
 .skill-content {
     display: flex;
     flex-wrap: wrap;
-    max-width: 800px;
+    max-width: 900px;
     margin: 50px auto;
     padding: 20px;
     background: none;
 }
 
 .skills-photo {
-    width: 300px;
+    padding: 30px;
+    width: 400px;
     height: 500px;
     margin-right: 20px;
 }
