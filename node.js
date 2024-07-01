@@ -14,14 +14,14 @@ function toggleDarkMode() {
 
 document.getElementById('scrollLeft').addEventListener('click', function() {
     document.querySelector('.projects-content').scrollBy({
-        left: -300, // Adjust the value to scroll by a desired amount
+        left: -300,
         behavior: 'smooth'
     });
 });
 
 document.getElementById('scrollRight').addEventListener('click', function() {
     document.querySelector('.projects-content').scrollBy({
-        left: 300, // Adjust the value to scroll by a desired amount
+        left: 300,
         behavior: 'smooth'
     });
 });
